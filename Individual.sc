@@ -1,7 +1,8 @@
 //Pregunta 1
 def myMethod(datos: List[Double]): Double = {
-  val promedio = datos.sum / datos.size
-  val sumaCuadrados = datos.map(x => math.pow(x - promedio,2)).sum
+  val logs = datos.map(math.log)
+  val promedio = logs.sum / logs.size
+  val sumaCuadrados = logs.map(x => math.pow(x - promedio,2)).sum
   math.sqrt(sumaCuadrados / datos.size)
 }
 val nums: List[Double] = List(5.6, 7.8 ,8.9)
@@ -20,3 +21,7 @@ def tiendaDigital(precios: List[Double], ajuste:Double => Double): List[Double] 
 val generadorIncrementadorAnonimo: Int => (Int => Int) = (incremento: Int) => (x: Int) => x + incremento
 
 def generarIncrementoAnonimo(incremento: Int): Int => Int = (x: Int) => x + incremento
+
+
+
+
